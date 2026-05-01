@@ -1,0 +1,37 @@
+# Dependencies
+vendor/
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# Logs
+*.log
+error_log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+
+# Cache
+cache/
+tmp/
+temp/
+
+# Uploads
+uploads/
+assets/images/uploads/
+
+# Database
+*.sqlite
+*.db
+
+# Composer
+composer.phar
+composer.lock
