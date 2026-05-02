@@ -1,0 +1,53 @@
+/* Admin Panel Styles */
+.sidebar {
+    background: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+    min-height: calc(100vh - 56px);
+}
+
+.sidebar .list-group-item {
+    border: none;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.sidebar .list-group-item:hover {
+    background: #e9ecef;
+    padding-left: 1.75rem;
+}
+
+.sidebar .list-group-item.active {
+    background: #0d6efd;
+    color: white;
+}
+
+/* Admin Cards */
+.stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Tables */
+.table thead {
+    background: #0d6efd;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+}
