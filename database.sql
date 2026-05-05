@@ -1,8 +1,6 @@
--- Create Database
 CREATE DATABASE IF NOT EXISTS sheba_finder_bd;
 USE sheba_finder_bd;
 
--- Users table (admin + regular users)
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -13,7 +11,6 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Insert admin user (password: admin123)
 INSERT INTO users (name, email, phone, password, user_type) VALUES 
 ('Admin', 'admin@shebafinder.com', '01700000000', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin');
 
@@ -21,7 +18,6 @@ INSERT INTO users (name, email, phone, password, user_type) VALUES
 INSERT INTO users (name, email, phone, password, user_type) VALUES 
 ('Rahim Uddin', 'rahim@gmail.com', '01712345678', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'user');
 
--- Categories table
 CREATE TABLE categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -29,7 +25,6 @@ CREATE TABLE categories (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Technicians table
 CREATE TABLE technicians (
     id INT AUTO_INCREMENT PRIMARY KEY,
     category_id INT NOT NULL,
@@ -46,7 +41,6 @@ CREATE TABLE technicians (
     FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
 );
 
--- Bookings table
 CREATE TABLE bookings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     technician_id INT NOT NULL,
@@ -65,7 +59,6 @@ CREATE TABLE bookings (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
 );
 
--- Insert sample categories
 INSERT INTO categories (name, icon) VALUES
 ('Plumbing', 'fas fa-wrench'),
 ('Electrical', 'fas fa-bolt'),
@@ -74,7 +67,6 @@ INSERT INTO categories (name, icon) VALUES
 ('Cleaning', 'fas fa-broom'),
 ('Painting', 'fas fa-paint-brush');
 
--- Insert sample technicians
 INSERT INTO technicians (category_id, name, phone, email, address, experience, rating, price_per_hour, image) VALUES
 (1, 'Md. Rahim Uddin', '01712345678', 'rahim@gmail.com', 'Dhaka', 8, 4.8, 500, 'technician1.jpg'),
 (1, 'Karim Mia', '01812345678', 'karim@gmail.com', 'Gazipur', 5, 4.5, 450, 'technician2.jpg'),
