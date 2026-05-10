@@ -12,7 +12,10 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-session_start();
+// Session start check - এটা পরিবর্তন করুন
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 function isLoggedIn() {
     return isset($_SESSION['user_id']);
